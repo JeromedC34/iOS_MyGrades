@@ -15,6 +15,13 @@
 		881FEA6C1DE2EF0A00C7692A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881FEA6A1DE2EF0A00C7692A /* LaunchScreen.storyboard */; };
 		881FEA771DE2EF0B00C7692A /* iOS_MyGradesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEA761DE2EF0B00C7692A /* iOS_MyGradesTests.swift */; };
 		881FEA821DE2EF0B00C7692A /* iOS_MyGradesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEA811DE2EF0B00C7692A /* iOS_MyGradesUITests.swift */; };
+		881FEA941DE2F2B500C7692A /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEA931DE2F2B500C7692A /* Subject.swift */; };
+		881FEA961DE2FC5100C7692A /* AddSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEA951DE2FC5100C7692A /* AddSubjectViewController.swift */; };
+		881FEA981DE300D900C7692A /* MyGrades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEA971DE300D900C7692A /* MyGrades.swift */; };
+		881FEA9A1DE3015400C7692A /* SubjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEA991DE3015400C7692A /* SubjectsTableViewController.swift */; };
+		881FEAA61DE3211000C7692A /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEAA51DE3211000C7692A /* Mark.swift */; };
+		881FEAA81DE3251000C7692A /* SubjectMarksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEAA71DE3251000C7692A /* SubjectMarksTableViewController.swift */; };
+		881FEAAE1DE32CAA00C7692A /* NewMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEAAD1DE32CAA00C7692A /* NewMarkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		881FEA7D1DE2EF0B00C7692A /* iOS_MyGradesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_MyGradesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		881FEA811DE2EF0B00C7692A /* iOS_MyGradesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_MyGradesUITests.swift; sourceTree = "<group>"; };
 		881FEA831DE2EF0B00C7692A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		881FEA931DE2F2B500C7692A /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		881FEA951DE2FC5100C7692A /* AddSubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubjectViewController.swift; sourceTree = "<group>"; };
+		881FEA971DE300D900C7692A /* MyGrades.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGrades.swift; sourceTree = "<group>"; };
+		881FEA991DE3015400C7692A /* SubjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsTableViewController.swift; sourceTree = "<group>"; };
+		881FEAA51DE3211000C7692A /* Mark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mark.swift; sourceTree = "<group>"; };
+		881FEAA71DE3251000C7692A /* SubjectMarksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectMarksTableViewController.swift; sourceTree = "<group>"; };
+		881FEAAD1DE32CAA00C7692A /* NewMarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMarkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +113,9 @@
 		881FEA5E1DE2EF0A00C7692A /* iOS_MyGrades */ = {
 			isa = PBXGroup;
 			children = (
+				881FEAAB1DE32A8500C7692A /* Models */,
+				881FEAAC1DE32A9B00C7692A /* Views */,
 				881FEA5F1DE2EF0A00C7692A /* AppDelegate.swift */,
-				881FEA611DE2EF0A00C7692A /* FirstViewController.swift */,
-				881FEA631DE2EF0A00C7692A /* SecondViewController.swift */,
 				881FEA651DE2EF0A00C7692A /* Main.storyboard */,
 				881FEA681DE2EF0A00C7692A /* Assets.xcassets */,
 				881FEA6A1DE2EF0A00C7692A /* LaunchScreen.storyboard */,
@@ -126,6 +140,29 @@
 				881FEA831DE2EF0B00C7692A /* Info.plist */,
 			);
 			path = iOS_MyGradesUITests;
+			sourceTree = "<group>";
+		};
+		881FEAAB1DE32A8500C7692A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				881FEAA51DE3211000C7692A /* Mark.swift */,
+				881FEA971DE300D900C7692A /* MyGrades.swift */,
+				881FEA931DE2F2B500C7692A /* Subject.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		881FEAAC1DE32A9B00C7692A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				881FEA611DE2EF0A00C7692A /* FirstViewController.swift */,
+				881FEA631DE2EF0A00C7692A /* SecondViewController.swift */,
+				881FEA951DE2FC5100C7692A /* AddSubjectViewController.swift */,
+				881FEA991DE3015400C7692A /* SubjectsTableViewController.swift */,
+				881FEAA71DE3251000C7692A /* SubjectMarksTableViewController.swift */,
+				881FEAAD1DE32CAA00C7692A /* NewMarkViewController.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +300,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				881FEA641DE2EF0A00C7692A /* SecondViewController.swift in Sources */,
+				881FEAA61DE3211000C7692A /* Mark.swift in Sources */,
+				881FEAA81DE3251000C7692A /* SubjectMarksTableViewController.swift in Sources */,
+				881FEA941DE2F2B500C7692A /* Subject.swift in Sources */,
+				881FEA9A1DE3015400C7692A /* SubjectsTableViewController.swift in Sources */,
+				881FEAAE1DE32CAA00C7692A /* NewMarkViewController.swift in Sources */,
+				881FEA961DE2FC5100C7692A /* AddSubjectViewController.swift in Sources */,
+				881FEA981DE300D900C7692A /* MyGrades.swift in Sources */,
 				881FEA601DE2EF0A00C7692A /* AppDelegate.swift in Sources */,
 				881FEA621DE2EF0A00C7692A /* FirstViewController.swift in Sources */,
 			);
@@ -509,6 +553,7 @@
 				881FEA881DE2EF0B00C7692A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		881FEA891DE2EF0B00C7692A /* Build configuration list for PBXNativeTarget "iOS_MyGradesTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +562,7 @@
 				881FEA8B1DE2EF0B00C7692A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		881FEA8C1DE2EF0B00C7692A /* Build configuration list for PBXNativeTarget "iOS_MyGradesUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +571,7 @@
 				881FEA8E1DE2EF0B00C7692A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
