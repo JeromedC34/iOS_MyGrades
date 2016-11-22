@@ -59,13 +59,7 @@ class SubjectMarksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mark-cell", for: indexPath)
         if let mySubject = _subject {
-            let addString:String
-            if let myAverage = mySubject.getAverage() {
-                addString = String(myAverage)
-            } else {
-                addString = Subject.NO_NOTE_YET
-            }
-            cell.textLabel?.text = mySubject.marksList[indexPath.row].name + " - " + addString
+            cell.textLabel?.text = mySubject.marksList[indexPath.row].name
             cell.detailTextLabel?.text = "\(mySubject.marksList[indexPath.row].coefficient) * \(mySubject.marksList[indexPath.row].value)"
         }
         return cell

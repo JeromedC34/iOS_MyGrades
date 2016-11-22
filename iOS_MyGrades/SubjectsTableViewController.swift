@@ -10,7 +10,17 @@ import UIKit
 
 class SubjectsTableViewController: UITableViewController {
     
+    @IBOutlet weak var uiNavigationItemTitle: UINavigationItem!
     private var _myGrades:MyGrades = MyGrades()
+    func setDisplay() {
+        let addString:String
+        if let myAverage = _myGrades.getAverage() {
+            addString = String(myAverage)
+        } else {
+            addString = Subject.NO_NOTE_YET
+        }
+        uiNavigationItemTitle.title = "Subjects - " + addString
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +73,7 @@ class SubjectsTableViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
+        setDisplay()
     }
     /*
      // Override to support conditional editing of the table view.
