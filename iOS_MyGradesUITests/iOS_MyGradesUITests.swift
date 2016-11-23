@@ -36,9 +36,8 @@ class iOS_MyGradesUITests: XCTestCase {
         let addButton = app.navigationBars["Subjects - No note yet"].buttons["Add"]
         let addSubjectNavigationBar = app.navigationBars["Add subject"]
         let saveButton = addSubjectNavigationBar.buttons["Save"]
-        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
-        let textField = element.children(matching: .textField).element(boundBy: 0)
-        let textField2 = element.children(matching: .textField).element(boundBy: 1)
+        let textField = app.textFields["add-subject-name"]
+        let textField2 = app.textFields["add-subject-coefficient"]
         let sportNoNoteYetStaticText = app.tables.staticTexts["Sport - No note yet"]
         let sportNoNoteYetNavigationBar = app.navigationBars["Sport - No note yet"]
         let valueTextField = app.textFields["Value"]
