@@ -11,7 +11,7 @@ import Foundation
 class MyGrades {
     public static let NEW_SUBJECT_NOT_SAVED:String = "You cannot add a subject with an already existing name."
     private static var _instance:MyGrades?
-    var instance:MyGrades {
+    public static var instance:MyGrades {
         if MyGrades._instance == nil {
             MyGrades._instance = MyGrades()
         }

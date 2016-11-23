@@ -69,7 +69,7 @@ class iOS_MyGradesUITests: XCTestCase {
         nameTextField.tap()
         nameTextField.typeText("Test Mark 1")
         app.navigationBars["New Mark"].buttons["Save"].tap()
-        
+        XCTAssertFalse(sportNoNoteYetStaticText.exists)
     }
     
 }

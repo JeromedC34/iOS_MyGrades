@@ -11,7 +11,7 @@ import UIKit
 class SubjectsTableViewController: UITableViewController {
     
     @IBOutlet weak var uiNavigationItemTitle: UINavigationItem!
-    private var _myGrades:MyGrades = MyGrades()
+    private var _myGrades:MyGrades = MyGrades.instance
     func setDisplay() {
         let addString:String
         if let myAverage = _myGrades.getAverage() {
