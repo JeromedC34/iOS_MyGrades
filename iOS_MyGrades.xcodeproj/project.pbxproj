@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C72460CE1BFCF799DDA27B3 /* Pods_iOS_MyGradesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C5722CF06E66AA1F6A2F87 /* Pods_iOS_MyGradesTests.framework */; };
+		5FD2C5FFDE183A00BDB1B94E /* Pods_iOS_MyGradesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96C44E1119751EBCDD6FA7D /* Pods_iOS_MyGradesUITests.framework */; };
 		881FEA601DE2EF0A00C7692A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEA5F1DE2EF0A00C7692A /* AppDelegate.swift */; };
 		881FEA621DE2EF0A00C7692A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEA611DE2EF0A00C7692A /* FirstViewController.swift */; };
 		881FEA641DE2EF0A00C7692A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEA631DE2EF0A00C7692A /* SecondViewController.swift */; };
@@ -22,6 +24,7 @@
 		881FEAA61DE3211000C7692A /* Mark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEAA51DE3211000C7692A /* Mark.swift */; };
 		881FEAA81DE3251000C7692A /* SubjectMarksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEAA71DE3251000C7692A /* SubjectMarksTableViewController.swift */; };
 		881FEAAE1DE32CAA00C7692A /* NewMarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEAAD1DE32CAA00C7692A /* NewMarkViewController.swift */; };
+		F88A7C165F63BE53FC522CA9 /* Pods_iOS_MyGrades.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B5E615CE82FFABA4EDB3950 /* Pods_iOS_MyGrades.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B5E615CE82FFABA4EDB3950 /* Pods_iOS_MyGrades.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_MyGrades.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2300BDCD1BD088909D50DCAA /* Pods-iOS_MyGradesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_MyGradesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_MyGradesTests/Pods-iOS_MyGradesTests.release.xcconfig"; sourceTree = "<group>"; };
+		26B48436A26E8176087A83B9 /* Pods-iOS_MyGradesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_MyGradesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_MyGradesUITests/Pods-iOS_MyGradesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A8BF14BE63FAE9F2D900861 /* Pods-iOS_MyGrades.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_MyGrades.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_MyGrades/Pods-iOS_MyGrades.debug.xcconfig"; sourceTree = "<group>"; };
+		5556D65D80BB5A3627EA7890 /* Pods-iOS_MyGradesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_MyGradesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_MyGradesTests/Pods-iOS_MyGradesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		881FEA5C1DE2EF0A00C7692A /* iOS_MyGrades.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_MyGrades.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		881FEA5F1DE2EF0A00C7692A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		881FEA611DE2EF0A00C7692A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +71,10 @@
 		881FEAA51DE3211000C7692A /* Mark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mark.swift; sourceTree = "<group>"; };
 		881FEAA71DE3251000C7692A /* SubjectMarksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectMarksTableViewController.swift; sourceTree = "<group>"; };
 		881FEAAD1DE32CAA00C7692A /* NewMarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMarkViewController.swift; sourceTree = "<group>"; };
+		9951BA4E6B835A2938534CCF /* Pods-iOS_MyGradesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_MyGradesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_MyGradesUITests/Pods-iOS_MyGradesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B9D1009D5B4B74BF69CB9C7B /* Pods-iOS_MyGrades.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_MyGrades.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_MyGrades/Pods-iOS_MyGrades.release.xcconfig"; sourceTree = "<group>"; };
+		E4C5722CF06E66AA1F6A2F87 /* Pods_iOS_MyGradesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_MyGradesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F96C44E1119751EBCDD6FA7D /* Pods_iOS_MyGradesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_MyGradesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88A7C165F63BE53FC522CA9 /* Pods_iOS_MyGrades.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C72460CE1BFCF799DDA27B3 /* Pods_iOS_MyGradesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +98,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FD2C5FFDE183A00BDB1B94E /* Pods_iOS_MyGradesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3766451A994F9165CC81A030 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B5E615CE82FFABA4EDB3950 /* Pods_iOS_MyGrades.framework */,
+				E4C5722CF06E66AA1F6A2F87 /* Pods_iOS_MyGradesTests.framework */,
+				F96C44E1119751EBCDD6FA7D /* Pods_iOS_MyGradesUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44FDE24829AC4BDE0831A9A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A8BF14BE63FAE9F2D900861 /* Pods-iOS_MyGrades.debug.xcconfig */,
+				B9D1009D5B4B74BF69CB9C7B /* Pods-iOS_MyGrades.release.xcconfig */,
+				5556D65D80BB5A3627EA7890 /* Pods-iOS_MyGradesTests.debug.xcconfig */,
+				2300BDCD1BD088909D50DCAA /* Pods-iOS_MyGradesTests.release.xcconfig */,
+				26B48436A26E8176087A83B9 /* Pods-iOS_MyGradesUITests.debug.xcconfig */,
+				9951BA4E6B835A2938534CCF /* Pods-iOS_MyGradesUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		881FEA531DE2EF0A00C7692A = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +135,8 @@
 				881FEA751DE2EF0B00C7692A /* iOS_MyGradesTests */,
 				881FEA801DE2EF0B00C7692A /* iOS_MyGradesUITests */,
 				881FEA5D1DE2EF0A00C7692A /* Products */,
+				44FDE24829AC4BDE0831A9A2 /* Pods */,
+				3766451A994F9165CC81A030 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,9 +212,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 881FEA861DE2EF0B00C7692A /* Build configuration list for PBXNativeTarget "iOS_MyGrades" */;
 			buildPhases = (
+				40344F9E5D8A7FE3249ABD5E /* [CP] Check Pods Manifest.lock */,
 				881FEA581DE2EF0A00C7692A /* Sources */,
 				881FEA591DE2EF0A00C7692A /* Frameworks */,
 				881FEA5A1DE2EF0A00C7692A /* Resources */,
+				897093E6A90AAB015ADED4FF /* [CP] Embed Pods Frameworks */,
+				6337FEE5BF2C430B770819A2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 881FEA891DE2EF0B00C7692A /* Build configuration list for PBXNativeTarget "iOS_MyGradesTests" */;
 			buildPhases = (
+				B8E4DB7354927647B46AD277 /* [CP] Check Pods Manifest.lock */,
 				881FEA6E1DE2EF0B00C7692A /* Sources */,
 				881FEA6F1DE2EF0B00C7692A /* Frameworks */,
 				881FEA701DE2EF0B00C7692A /* Resources */,
+				7DA973F9F7BEB34577124269 /* [CP] Embed Pods Frameworks */,
+				09AF748826DDCCEA644399E5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,9 +253,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 881FEA8C1DE2EF0B00C7692A /* Build configuration list for PBXNativeTarget "iOS_MyGradesUITests" */;
 			buildPhases = (
+				10398B432CADA0C530F71BCD /* [CP] Check Pods Manifest.lock */,
 				881FEA791DE2EF0B00C7692A /* Sources */,
 				881FEA7A1DE2EF0B00C7692A /* Frameworks */,
 				881FEA7B1DE2EF0B00C7692A /* Resources */,
+				78338AE9253C168206C951F4 /* [CP] Embed Pods Frameworks */,
+				EF03070703BBB5D1AD43EA64 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,6 +342,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09AF748826DDCCEA644399E5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_MyGradesTests/Pods-iOS_MyGradesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		10398B432CADA0C530F71BCD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		40344F9E5D8A7FE3249ABD5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6337FEE5BF2C430B770819A2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_MyGrades/Pods-iOS_MyGrades-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78338AE9253C168206C951F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_MyGradesUITests/Pods-iOS_MyGradesUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DA973F9F7BEB34577124269 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_MyGradesTests/Pods-iOS_MyGradesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		897093E6A90AAB015ADED4FF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_MyGrades/Pods-iOS_MyGrades-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8E4DB7354927647B46AD277 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EF03070703BBB5D1AD43EA64 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_MyGradesUITests/Pods-iOS_MyGradesUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		881FEA581DE2EF0A00C7692A /* Sources */ = {
@@ -458,6 +645,7 @@
 		};
 		881FEA871DE2EF0B00C7692A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A8BF14BE63FAE9F2D900861 /* Pods-iOS_MyGrades.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOS_MyGrades/Info.plist;
@@ -470,6 +658,7 @@
 		};
 		881FEA881DE2EF0B00C7692A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9D1009D5B4B74BF69CB9C7B /* Pods-iOS_MyGrades.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iOS_MyGrades/Info.plist;
@@ -482,6 +671,7 @@
 		};
 		881FEA8A1DE2EF0B00C7692A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5556D65D80BB5A3627EA7890 /* Pods-iOS_MyGradesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -496,6 +686,7 @@
 		};
 		881FEA8B1DE2EF0B00C7692A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2300BDCD1BD088909D50DCAA /* Pods-iOS_MyGradesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +701,7 @@
 		};
 		881FEA8D1DE2EF0B00C7692A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26B48436A26E8176087A83B9 /* Pods-iOS_MyGradesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = iOS_MyGradesUITests/Info.plist;
@@ -523,6 +715,7 @@
 		};
 		881FEA8E1DE2EF0B00C7692A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9951BA4E6B835A2938534CCF /* Pods-iOS_MyGradesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = iOS_MyGradesUITests/Info.plist;
