@@ -100,4 +100,10 @@ class MyGrades {
     func getNbSubjects() -> Int {
         return _subjectsList.count
     }
+    func getNbMarks(forSubjectAtIndex:Int) -> Int {
+        return _subjectsList[forSubjectAtIndex].getNbMarks()
+    }
+    func getSubject(atIndex:Int) -> Subject {
+        return _subjectsList[atIndex]
+    }
 }

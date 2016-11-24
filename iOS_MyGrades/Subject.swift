@@ -86,4 +86,10 @@ class Subject:Object {
             return nil
         }
     }
+    func getNbMarks() -> Int {
+        return _marksList.count
+    }
+    func getMark(atIndex:Int) -> Mark {
+        return _marksList[atIndex]
+    }
 }
