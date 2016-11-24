@@ -10,8 +10,6 @@
 		2C72460CE1BFCF799DDA27B3 /* Pods_iOS_MyGradesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4C5722CF06E66AA1F6A2F87 /* Pods_iOS_MyGradesTests.framework */; };
 		5FD2C5FFDE183A00BDB1B94E /* Pods_iOS_MyGradesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F96C44E1119751EBCDD6FA7D /* Pods_iOS_MyGradesUITests.framework */; };
 		881FEA601DE2EF0A00C7692A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEA5F1DE2EF0A00C7692A /* AppDelegate.swift */; };
-		881FEA621DE2EF0A00C7692A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEA611DE2EF0A00C7692A /* FirstViewController.swift */; };
-		881FEA641DE2EF0A00C7692A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881FEA631DE2EF0A00C7692A /* SecondViewController.swift */; };
 		881FEA671DE2EF0A00C7692A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881FEA651DE2EF0A00C7692A /* Main.storyboard */; };
 		881FEA691DE2EF0A00C7692A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 881FEA681DE2EF0A00C7692A /* Assets.xcassets */; };
 		881FEA6C1DE2EF0A00C7692A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881FEA6A1DE2EF0A00C7692A /* LaunchScreen.storyboard */; };
@@ -54,8 +52,6 @@
 		5556D65D80BB5A3627EA7890 /* Pods-iOS_MyGradesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_MyGradesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_MyGradesTests/Pods-iOS_MyGradesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		881FEA5C1DE2EF0A00C7692A /* iOS_MyGrades.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_MyGrades.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		881FEA5F1DE2EF0A00C7692A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		881FEA611DE2EF0A00C7692A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		881FEA631DE2EF0A00C7692A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		881FEA661DE2EF0A00C7692A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		881FEA681DE2EF0A00C7692A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		881FEA6B1DE2EF0A00C7692A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -199,14 +195,12 @@
 		881FEAAC1DE32A9B00C7692A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				881FEA611DE2EF0A00C7692A /* FirstViewController.swift */,
-				881FEA631DE2EF0A00C7692A /* SecondViewController.swift */,
 				881FEA951DE2FC5100C7692A /* AddSubjectViewController.swift */,
-				881FEA991DE3015400C7692A /* SubjectsTableViewController.swift */,
-				881FEAA71DE3251000C7692A /* SubjectMarksTableViewController.swift */,
 				881FEAAD1DE32CAA00C7692A /* NewMarkViewController.swift */,
-				881FEAAF1DE5A5A400C7692A /* SubjectsListTableViewController.swift */,
 				881FEAB11DE5DAE300C7692A /* SettingsViewController.swift */,
+				881FEAAF1DE5A5A400C7692A /* SubjectsListTableViewController.swift */,
+				881FEAA71DE3251000C7692A /* SubjectMarksTableViewController.swift */,
+				881FEA991DE3015400C7692A /* SubjectsTableViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -492,7 +486,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				881FEA641DE2EF0A00C7692A /* SecondViewController.swift in Sources */,
 				881FEAB01DE5A5A400C7692A /* SubjectsListTableViewController.swift in Sources */,
 				881FEAA61DE3211000C7692A /* Mark.swift in Sources */,
 				881FEAA81DE3251000C7692A /* SubjectMarksTableViewController.swift in Sources */,
@@ -502,7 +495,6 @@
 				881FEA961DE2FC5100C7692A /* AddSubjectViewController.swift in Sources */,
 				881FEA981DE300D900C7692A /* MyGrades.swift in Sources */,
 				881FEA601DE2EF0A00C7692A /* AppDelegate.swift in Sources */,
-				881FEA621DE2EF0A00C7692A /* FirstViewController.swift in Sources */,
 				881FEAB21DE5DAE300C7692A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

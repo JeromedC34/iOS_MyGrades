@@ -9,11 +9,10 @@
 import UIKit
 
 class SubjectsListTableViewController: UITableViewController {
-    private var myGrades:MyGrades = MyGrades.instance
+    private var _myGrades:MyGrades = MyGrades.instance
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -31,26 +30,26 @@ class SubjectsListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return myGrades.subjectsList.count
+        return _myGrades.getNbSubjects()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myGrades.subjectsList[section].marksList.count
+        return _myGrades.subjectsList[section].marksList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subjects-list-cell", for: indexPath)
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.medium
-        let mark:Mark = myGrades.subjectsList[indexPath.section].marksList[indexPath.row]
+        let mark:Mark = _myGrades.subjectsList[indexPath.section].marksList[indexPath.row]
         let dateString:String = formatter.string(from: mark.date)
         cell.textLabel?.text = "\(mark.name) - \(dateString) - \(mark.coefficient) * \(mark.value)"
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return myGrades.subjectsList[section].name
+        return _myGrades.subjectsList[section].name
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
@@ -59,8 +58,8 @@ class SubjectsListTableViewController: UITableViewController {
         if segue.identifier == "edit-mark",
             let navController = segue.destination as? UINavigationController,
             let newMarkController = navController.topViewController as? NewMarkViewController {
-            newMarkController.mySubject = myGrades.subjectsList[(tableView.indexPathForSelectedRow?.section)!]
-            newMarkController.myMark = myGrades.subjectsList[(tableView.indexPathForSelectedRow?.section)!].marksList[(tableView.indexPathForSelectedRow?.row)!]
+            newMarkController.mySubject = _myGrades.subjectsList[(tableView.indexPathForSelectedRow?.section)!]
+            newMarkController.myMark = _myGrades.subjectsList[(tableView.indexPathForSelectedRow?.section)!].marksList[(tableView.indexPathForSelectedRow?.row)!]
         }
     }
     
@@ -74,7 +73,7 @@ class SubjectsListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            myGrades.subjectsList[indexPath.section].delMark(atIndex: indexPath.row)
+            _myGrades.subjectsList[indexPath.section].delMark(atIndex: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

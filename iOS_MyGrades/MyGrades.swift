@@ -62,16 +62,21 @@ class MyGrades {
         // Query Realm for all subjects
         _subjectsList = _realm.objects(Subject.self)
     }
-    
     func addSubject(subject:Subject) -> Bool {
         let mayAdd:Bool = _subjectsList.index(of: subject) == nil
         if mayAdd {
-//            _subjectsList.append(subject)
             try! _realm.write {
                 _realm.add(subject)
             }
         }
         return mayAdd
+    }
+    func addSubject(name:String, coefficient:Int) -> Bool {
+        if let subject = Subject(name: name, coefficient: coefficient) {
+            return addSubject(subject: subject)
+        } else {
+            return false
+        }
     }
     func getAverage() -> Float? {
         if _subjectsList.count > 0 {
@@ -91,5 +96,8 @@ class MyGrades {
         } else {
             return nil
         }
+    }
+    func getNbSubjects() -> Int {
+        return _subjectsList.count
     }
 }

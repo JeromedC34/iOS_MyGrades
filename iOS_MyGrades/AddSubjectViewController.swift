@@ -9,33 +9,19 @@
 import UIKit
 
 class AddSubjectViewController: UIViewController {
+    private var _myGrades:MyGrades = MyGrades.instance
     @IBOutlet weak var newSubjectName: UITextField!
     @IBOutlet weak var newSubjectCoefficient: UITextField!
-    private var _myGrades:MyGrades?
-    var myGrades:MyGrades {
-        get {
-            return _myGrades!
-        }
-        set {
-            _myGrades = newValue
-        }
-    }
-
     @IBAction func cancelAddSubject(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func saveAddSubject(_ sender: Any) {
-        if let currentMyGrades = _myGrades,
-            let subjectName:String = newSubjectName.text,
+        if let subjectName:String = newSubjectName.text,
             let subjectCoefficient:Int = Int(newSubjectCoefficient.text!) {
-            if let newSubject:Subject = Subject(name: subjectName, coefficient: subjectCoefficient) {
-                if !currentMyGrades.addSubject(subject: newSubject) {
-                    warningSavingSubject(alertText:MyGrades.NEW_SUBJECT_NOT_SAVED)
-                } else {
-                    dismiss(animated: true, completion: nil)
-                }
+            if !_myGrades.addSubject(name: subjectName, coefficient: subjectCoefficient) {
+                warningSavingSubject(alertText:MyGrades.NEW_SUBJECT_NOT_SAVED)
             } else {
-                warningSavingSubject(alertText:Subject.BAD_PARAMETERS)
+                dismiss(animated: true, completion: nil)
             }
         } else {
             warningSavingSubject(alertText:"You need to input the required parameters.")

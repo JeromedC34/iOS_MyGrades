@@ -62,11 +62,7 @@ class SubjectsTableViewController: UITableViewController {
         return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "add-subject-segue",
-            let navController = segue.destination as? UINavigationController,
-            let addSubjectController = navController.topViewController as? AddSubjectViewController {
-            addSubjectController.myGrades = _myGrades
-        } else if segue.identifier == "show-subject",
+        if segue.identifier == "show-subject",
             let subjectMarksController = segue.destination as? SubjectMarksTableViewController {
             subjectMarksController.subject = _myGrades.subjectsList[(tableView.indexPathForSelectedRow?.row)!]
         }
