@@ -13,23 +13,31 @@ class Subject:Object {
     public static let NO_NOTE_YET:String = "No note yet"
     public static let BAD_PARAMETERS:String = "Subject name must not be empty and coefficient greater than zero"
     private dynamic var _name:String = ""
-    var name:String {
-        get {
-            return _name
-        }
-        set {
-            _name = newValue
-        }
-    }
     private dynamic var _coefficient:Int = 0
-    var coefficient:Int {
-        get {
-            return _coefficient
-        }
-        set {
-            _coefficient = newValue
+    public func getName() -> String {
+        return _name
+    }
+    
+    public func getCoefficient() -> Int {
+        return _coefficient
+    }
+    
+    public func setName(newValue:String) {
+        if newValue != "" {
+            realm?.beginWrite()
+            self._name = newValue
+            try! realm?.commitWrite()
         }
     }
+    
+    public func setCoefficient(newValue:Int) {
+        if newValue > 0 {
+            realm?.beginWrite()
+            self._coefficient = newValue
+            try! realm?.commitWrite()
+        }
+    }
+
     private var _marksList:List<Mark> = List<Mark>()
     var marksList:List<Mark> {
         get {
@@ -50,14 +58,19 @@ class Subject:Object {
         }
     }
     override static func ignoredProperties() -> [String] {
-        return ["name", "coefficient", "marksList"]
+        return ["marksList"]
     }
     public static func == (subject1:Subject, subject2:Subject) -> Bool{
-        return subject1.name == subject2.name
+        return subject1.getName() == subject2.getName()
     }
     public func addMark(newMark:Mark) {
         try! self.realm?.write {
             marksList.append(newMark)
+        }
+    }
+    public func addMark(value:Float, coefficient:Int, date:Date, name:String) {
+        if let newMark = Mark(value: value, coefficient: coefficient, date: date, name: name) {
+            return addMark(newMark:newMark)
         }
     }
     public func delMark(atIndex:Int) {
@@ -65,12 +78,29 @@ class Subject:Object {
             marksList.remove(objectAtIndex: atIndex)
         }
     }
+    public func removeAllMarks() {
+        if let r = realm {
+            try! r.write {
+                r.delete(_marksList)
+            }
+        } else {
+            _marksList.removeAll()
+        }
+    }
+    public func delete() {
+        removeAllMarks()
+        if let r = realm {
+            try! r.write {
+                r.delete(self)
+            }
+        }
+    }
     public func updateMark(existingMark:Mark, updatedMark:Mark) {
         try! self.realm?.write {
-            existingMark.value = updatedMark.value
-            existingMark.coefficient = updatedMark.coefficient
-            existingMark.date = updatedMark.date
-            existingMark.name = updatedMark.name
+            existingMark.setValue(newValue: updatedMark.getValue())
+            existingMark.setCoefficient(newValue: updatedMark.getCoefficient())
+            existingMark.setDate(newValue: updatedMark.getDate())
+            existingMark.setName(newValue: updatedMark.getName())
         }
     }
     public func getAverage() -> Float? {
@@ -78,8 +108,8 @@ class Subject:Object {
             var sumCoefficients:Int = 0
             var sumMarks:Float = 0
             for mark in _marksList {
-                sumCoefficients = sumCoefficients + mark.coefficient
-                sumMarks = sumMarks + (mark.value * Float(mark.coefficient))
+                sumCoefficients = sumCoefficients + mark.getCoefficient()
+                sumMarks = sumMarks + (mark.getValue() * Float(mark.getCoefficient()))
             }
             return ((100 * sumMarks / Float(sumCoefficients))).rounded() / 100
         } else {
@@ -89,7 +119,13 @@ class Subject:Object {
     func getNbMarks() -> Int {
         return _marksList.count
     }
-    func getMark(atIndex:Int) -> Mark {
-        return _marksList[atIndex]
+    func getMark(atIndex index:Int) -> Mark? {
+        let mark:Mark?
+        if index >= 0 && index < _marksList.count {
+            mark = _marksList[index]
+        } else {
+            mark = nil
+        }
+        return mark
     }
 }

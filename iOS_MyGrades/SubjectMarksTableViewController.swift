@@ -23,9 +23,9 @@ class SubjectMarksTableViewController: UITableViewController {
     private func setDisplay() {
         if let mySubject = _subject {
             if let myAverage = mySubject.getAverage() {
-                navControllerItem.title = "\(mySubject.name) - \((myAverage * 100.0).rounded() / 100.0)"
+                navControllerItem.title = "\(mySubject.getName()) - \((myAverage * 100.0).rounded() / 100.0)"
             } else {
-                navControllerItem.title = "\(mySubject.name) - \(Subject.NO_NOTE_YET)"
+                navControllerItem.title = "\(mySubject.getName()) - \(Subject.NO_NOTE_YET)"
             }
         }
     }
@@ -59,8 +59,8 @@ class SubjectMarksTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mark-cell", for: indexPath)
         if let mySubject = _subject {
-            cell.textLabel?.text = mySubject.marksList[indexPath.row].name
-            cell.detailTextLabel?.text = "\(mySubject.marksList[indexPath.row].coefficient) * \(mySubject.marksList[indexPath.row].value)"
+            cell.textLabel?.text = mySubject.marksList[indexPath.row].getName()
+            cell.detailTextLabel?.text = "\(mySubject.marksList[indexPath.row].getCoefficient()) * \(mySubject.marksList[indexPath.row].getValue())"
         }
         return cell
     }

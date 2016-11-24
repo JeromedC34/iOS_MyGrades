@@ -41,20 +41,25 @@ class NewMarkViewController: UIViewController {
             let newMarkValue:Float = Float(uiNewMarkValue.text!),
             let newMarkCoefficient:Int = Int(uiNewMarkCoefficient.text!),
             let newMarkName:String = uiNewMarkName.text {
-            if let myMark = _myMark {
-                currentMySubject.updateMark(existingMark: myMark, updatedMark: Mark(value:newMarkValue, coefficient:newMarkCoefficient, date:newMarkDate, name:newMarkName))
-            } else {
-                currentMySubject.addMark(newMark: Mark(value:newMarkValue, coefficient:newMarkCoefficient, date:newMarkDate, name:newMarkName))
+            if let newMark = Mark(value:newMarkValue, coefficient:newMarkCoefficient, date:newMarkDate, name:newMarkName) {
+                if let myMark = _myMark {
+                    myMark.setValue(newValue: newMarkValue)
+                    myMark.setCoefficient(newValue: newMarkCoefficient)
+                    myMark.setDate(newValue: newMarkDate)
+                    myMark.setName(newValue: newMarkName)
+                } else {
+                    currentMySubject.addMark(newMark: newMark)
+                }
             }
             dismiss(animated: true, completion: nil)
         }
     }
     override func viewWillAppear(_ animated: Bool) {
         if let myMark = _myMark {
-            uiNewMarkValue.text = String(myMark.value)
-            uiNewMarkCoefficient.text = String(myMark.coefficient)
-            uiNewMarkDate.date = myMark.date
-            uiNewMarkName.text = myMark.name
+            uiNewMarkValue.text = String(myMark.getValue())
+            uiNewMarkCoefficient.text = String(myMark.getCoefficient())
+            uiNewMarkDate.date = myMark.getDate()
+            uiNewMarkName.text = myMark.getName()
         }
     }
     override func viewDidLoad() {

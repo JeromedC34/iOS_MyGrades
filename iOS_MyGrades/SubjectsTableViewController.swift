@@ -57,7 +57,7 @@ class SubjectsTableViewController: UITableViewController {
         } else {
             addString = Subject.NO_NOTE_YET
         }
-        cell.textLabel?.text = _myGrades.subjectsList[indexPath.row].name + " - " + addString
+        cell.textLabel?.text = _myGrades.getSubject(atIndex: indexPath.row).getName() + " - " + addString
         
         return cell
     }

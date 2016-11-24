@@ -84,8 +84,8 @@ class MyGrades {
             var sumAverages:Float = 0
             for subject in _subjectsList {
                 if let currentAverage = subject.getAverage() {
-                    sumCoefficients = sumCoefficients + subject.coefficient
-                    sumAverages = sumAverages + (currentAverage * Float(subject.coefficient))
+                    sumCoefficients = sumCoefficients + subject.getCoefficient()
+                    sumAverages = sumAverages + (currentAverage * Float(subject.getCoefficient()))
                 }
             }
             if sumCoefficients > 0 {

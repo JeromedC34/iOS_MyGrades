@@ -42,14 +42,14 @@ class SubjectsListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subjects-list-cell", for: indexPath)
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.medium
-        let mark:Mark = _myGrades.getSubject(atIndex: indexPath.section).getMark(atIndex:indexPath.row)
-        let dateString:String = formatter.string(from: mark.date)
-        cell.textLabel?.text = "\(mark.name) - \(dateString) - \(mark.coefficient) * \(mark.value)"
+        let mark:Mark = _myGrades.getSubject(atIndex: indexPath.section).getMark(atIndex:indexPath.row)!
+        let dateString:String = formatter.string(from: mark.getDate())
+        cell.textLabel?.text = "\(mark.getName()) - \(dateString) - \(mark.getCoefficient()) * \(mark.getValue())"
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return _myGrades.getSubject(atIndex: section).name
+        return _myGrades.getSubject(atIndex: section).getName() + "eee"
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
@@ -59,7 +59,7 @@ class SubjectsListTableViewController: UITableViewController {
             let navController = segue.destination as? UINavigationController,
             let newMarkController = navController.topViewController as? NewMarkViewController {
             newMarkController.mySubject = _myGrades.getSubject(atIndex: (tableView.indexPathForSelectedRow?.section)!)
-            newMarkController.myMark = newMarkController.mySubject.getMark(atIndex: (tableView.indexPathForSelectedRow?.row)!)
+            newMarkController.myMark = newMarkController.mySubject.getMark(atIndex: (tableView.indexPathForSelectedRow?.row)!)!
         }
     }
     

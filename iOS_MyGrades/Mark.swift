@@ -11,47 +11,57 @@ import RealmSwift
 
 class Mark:Object {
     private dynamic var _value:Float = 0
-    var value:Float {
-        get {
-            return _value
-        }
-        set {
-            _value = newValue
-        }
-    }
     private dynamic var _coefficient:Int = 0
-    var coefficient:Int {
-        get {
-            return _coefficient
-        }
-        set {
-            _coefficient = newValue
-        }
-    }
     private dynamic var _date:Date = Date()
-    var date:Date {
-        get {
-            return _date
-        }
-        set {
-            _date = newValue
-        }
-    }
     private dynamic var _name:String = ""
-    var name:String {
-        get {
-            return _name
-        }
-        set {
-            _name = newValue
+    public func getValue() -> Float {
+        return _value
+    }
+    public func getCoefficient() -> Int {
+        return _coefficient
+    }
+    public func getDate() -> Date {
+        return _date
+    }
+    public func getName() -> String {
+        return _name
+    }
+    public func setValue(newValue:Float) {
+        if newValue >= 0 {
+            realm?.beginWrite()
+            self._value = newValue
+            try! realm?.commitWrite()
         }
     }
-    convenience init(value:Float, coefficient:Int, date:Date, name:String) {
-        self.init()
-        _value = value
-        _coefficient = coefficient
-        _date = date
-        _name = name
+    public func setCoefficient(newValue:Int) {
+        if newValue > 0 {
+            realm?.beginWrite()
+            self._coefficient = newValue
+            try! realm?.commitWrite()
+        }
+    }
+    public func setDate(newValue:Date) {
+        realm?.beginWrite()
+        self._date = newValue
+        try! realm?.commitWrite()
+    }
+    public func setName(newValue:String) {
+        if newValue.characters.count > 0 {
+            realm?.beginWrite()
+            self._name = newValue
+            try! realm?.commitWrite()
+        }
+    }
+    convenience init?(value:Float, coefficient:Int, date:Date, name:String) {
+        if value >= 0 && coefficient > 0 {
+            self.init()
+            _value = value
+            _coefficient = coefficient
+            _date = date
+            _name = name
+        } else {
+            return nil
+        }
     }
     override static func ignoredProperties() -> [String] {
         return ["value", "coefficient", "date", "name"]
