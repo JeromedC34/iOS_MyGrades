@@ -43,7 +43,14 @@ class iOS_MyGradesUITests: XCTestCase {
         let valueTextField = app.textFields["Value"]
         let coefficientTextField = app.textFields["Coefficient"]
         let nameTextField = app.textFields["Name"]
+        let tabBarsQuery = app.tabBars
 
+        // Empty DB
+        tabBarsQuery.buttons["Settings"].tap()
+        app.buttons["Empty database"].tap()
+        app.alerts["Empty database"].buttons["Yes"].tap()
+        tabBarsQuery.buttons["Subjects"].tap()
+        
         XCTAssertTrue(app.tables["Empty list"].exists)
         addButton.tap()
         addSubjectNavigationBar.buttons["Cancel"].tap()
