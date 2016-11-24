@@ -18,6 +18,15 @@ class NewMarkViewController: UIViewController {
             _mySubject = newValue
         }
     }
+    private var _myMark:Mark?
+    var myMark:Mark {
+        get {
+            return _myMark!
+        }
+        set {
+            _myMark = newValue
+        }
+    }
 
     @IBAction func cancelNewMark(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -32,8 +41,20 @@ class NewMarkViewController: UIViewController {
             let newMarkValue:Float = Float(uiNewMarkValue.text!),
             let newMarkCoefficient:Int = Int(uiNewMarkCoefficient.text!),
             let newMarkName:String = uiNewMarkName.text {
-            currentMySubject.addMark(newMark: Mark(value:newMarkValue, coefficient:newMarkCoefficient, date:newMarkDate, name:newMarkName))
+            if let myMark = _myMark {
+                currentMySubject.updateMark(existingMark: myMark, updatedMark: Mark(value:newMarkValue, coefficient:newMarkCoefficient, date:newMarkDate, name:newMarkName))
+            } else {
+                currentMySubject.addMark(newMark: Mark(value:newMarkValue, coefficient:newMarkCoefficient, date:newMarkDate, name:newMarkName))
+            }
             dismiss(animated: true, completion: nil)
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        if let myMark = _myMark {
+            uiNewMarkValue.text = String(myMark.value)
+            uiNewMarkCoefficient.text = String(myMark.coefficient)
+            uiNewMarkDate.date = myMark.date
+            uiNewMarkName.text = myMark.name
         }
     }
     override func viewDidLoad() {

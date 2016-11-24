@@ -7,28 +7,53 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Mark {
-    private var _value:Float
+class Mark:Object {
+    private dynamic var _value:Float = 0
     var value:Float {
-        return _value
+        get {
+            return _value
+        }
+        set {
+            _value = newValue
+        }
     }
-    private var _coefficient:Int
+    private dynamic var _coefficient:Int = 0
     var coefficient:Int {
-        return _coefficient
+        get {
+            return _coefficient
+        }
+        set {
+            _coefficient = newValue
+        }
     }
-    private var _date:Date
+    private dynamic var _date:Date = Date()
     var date:Date {
-        return _date
+        get {
+            return _date
+        }
+        set {
+            _date = newValue
+        }
     }
-    private var _name:String
+    private dynamic var _name:String = ""
     var name:String {
-        return _name
+        get {
+            return _name
+        }
+        set {
+            _name = newValue
+        }
     }
-    init(value:Float, coefficient:Int, date:Date, name:String) {
+    convenience init(value:Float, coefficient:Int, date:Date, name:String) {
+        self.init()
         _value = value
         _coefficient = coefficient
         _date = date
         _name = name
+    }
+    override static func ignoredProperties() -> [String] {
+        return ["value", "coefficient", "date", "name"]
     }
 }

@@ -7,36 +7,71 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Subject:Equatable {
+class Subject:Object {
     public static let NO_NOTE_YET:String = "No note yet"
     public static let BAD_PARAMETERS:String = "Subject name must not be empty and coefficient greater than zero"
-    private var _name:String
+    private dynamic var _name:String = ""
     var name:String {
-        return _name
+        get {
+            return _name
+        }
+        set {
+            _name = newValue
+        }
     }
-    private var _coefficient:Int
+    private dynamic var _coefficient:Int = 0
     var coefficient:Int {
-        return _coefficient
+        get {
+            return _coefficient
+        }
+        set {
+            _coefficient = newValue
+        }
     }
-    private var _marksList:[Mark]
-    var marksList:[Mark] {
-        return _marksList
+    private var _marksList:List<Mark> = List<Mark>()
+    var marksList:List<Mark> {
+        get {
+            return _marksList
+        }
+        set {
+            _marksList = newValue
+        }
     }
-    init?(name:String, coefficient:Int) {
+    convenience init?(name:String, coefficient:Int) {
+        self.init()
         if name.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines) == "" || coefficient <= 0 {
             return nil
         } else {
             _name = name.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
             _coefficient = coefficient
-            _marksList = []
+            _marksList = List<Mark>()
         }
+    }
+    override static func ignoredProperties() -> [String] {
+        return ["name", "coefficient", "marksList"]
     }
     public static func == (subject1:Subject, subject2:Subject) -> Bool{
         return subject1.name == subject2.name
     }
     public func addMark(newMark:Mark) {
-        _marksList.append(newMark)
+        try! self.realm?.write {
+            marksList.append(newMark)
+        }
+    }
+    public func delMark(atIndex:Int) {
+        try! self.realm?.write {
+            marksList.remove(objectAtIndex: atIndex)
+        }
+    }
+    public func updateMark(existingMark:Mark, updatedMark:Mark) {
+        try! self.realm?.write {
+            existingMark.value = updatedMark.value
+            existingMark.coefficient = updatedMark.coefficient
+            existingMark.date = updatedMark.date
+            existingMark.name = updatedMark.name
+        }
     }
     public func getAverage() -> Float? {
         if _marksList.count > 0 {
@@ -46,7 +81,7 @@ class Subject:Equatable {
                 sumCoefficients = sumCoefficients + mark.coefficient
                 sumMarks = sumMarks + (mark.value * Float(mark.coefficient))
             }
-            return sumMarks / Float(sumCoefficients)
+            return ((100 * sumMarks / Float(sumCoefficients))).rounded() / 100
         } else {
             return nil
         }
