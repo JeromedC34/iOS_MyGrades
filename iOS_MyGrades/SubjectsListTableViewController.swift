@@ -49,7 +49,7 @@ class SubjectsListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return _myGrades.getSubject(atIndex: section).getName() + "eee"
+        return _myGrades.getSubject(atIndex: section).getName()
     }
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()

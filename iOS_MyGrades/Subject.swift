@@ -65,7 +65,7 @@ class Subject:Object {
     }
     public func addMark(newMark:Mark) {
         try! self.realm?.write {
-            marksList.append(newMark)
+            _marksList.append(newMark)
         }
     }
     public func addMark(value:Float, coefficient:Int, date:Date, name:String) {
@@ -75,7 +75,8 @@ class Subject:Object {
     }
     public func delMark(atIndex:Int) {
         try! self.realm?.write {
-            marksList.remove(objectAtIndex: atIndex)
+            self.realm!.delete(_marksList[atIndex])
+//            _marksList.remove(objectAtIndex: atIndex))
         }
     }
     public func removeAllMarks() {
