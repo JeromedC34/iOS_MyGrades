@@ -60,7 +60,7 @@ class MyGrades {
         _realm = try! Realm()
         print(_realm.configuration.fileURL!)
         // Query Realm for all subjects
-        _subjectsList = _realm.objects(Subject.self)
+        _subjectsList = _realm.objects(Subject.self).sorted(byProperty: "_name", ascending: true)
     }
     func addSubject(subject:Subject) -> Bool {
         let mayAdd:Bool = _subjectsList.index(of: subject) == nil
